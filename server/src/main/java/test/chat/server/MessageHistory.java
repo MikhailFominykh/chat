@@ -11,10 +11,6 @@ public abstract class MessageHistory<MessageType> {
 		return (MessageHistory<MessageType>) NULL;
 	}
 
-	public abstract void add(MessageType message);
-
-	public abstract List<MessageType> getMessages();
-
 	private static class NullHistory<MessageType> extends MessageHistory<MessageType> {
 		@Override
 		public void add(MessageType message) {
@@ -25,4 +21,8 @@ public abstract class MessageHistory<MessageType> {
 			return Collections.emptyList();
 		}
 	}
+
+	public abstract void add(MessageType message);
+
+	public abstract List<MessageType> getMessages();
 }
