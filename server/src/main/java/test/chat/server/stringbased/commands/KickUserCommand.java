@@ -1,14 +1,14 @@
 package test.chat.server.stringbased.commands;
 
 import test.chat.server.Client;
-import test.chat.server.stringbased.Chat;
+import test.chat.server.Chat;
 import test.chat.server.stringbased.CommandExecutionResult;
 import test.chat.server.stringbased.CommandHandler;
 
 public class KickUserCommand implements CommandHandler {
-	private Chat chat;
+	private Chat<String> chat;
 
-	public KickUserCommand(Chat chat) {
+	public KickUserCommand(Chat<String> chat) {
 		this.chat = chat;
 	}
 

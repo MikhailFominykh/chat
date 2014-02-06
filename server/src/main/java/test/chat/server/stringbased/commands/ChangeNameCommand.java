@@ -2,16 +2,16 @@ package test.chat.server.stringbased.commands;
 
 import test.chat.server.Client;
 import test.chat.server.StringUtils;
-import test.chat.server.stringbased.Chat;
+import test.chat.server.Chat;
 import test.chat.server.stringbased.CommandExecutionResult;
 import test.chat.server.stringbased.CommandHandler;
 
 public class ChangeNameCommand implements CommandHandler {
 	public static final String COMMAND_NAME = "name";
 
-	private Chat chat;
+	private Chat<String> chat;
 
-	public ChangeNameCommand(Chat chat) {
+	public ChangeNameCommand(Chat<String> chat) {
 		this.chat = chat;
 	}
 

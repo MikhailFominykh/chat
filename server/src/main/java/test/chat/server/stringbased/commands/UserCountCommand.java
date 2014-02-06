@@ -1,14 +1,14 @@
 package test.chat.server.stringbased.commands;
 
 import test.chat.server.Client;
-import test.chat.server.stringbased.Chat;
+import test.chat.server.Chat;
 import test.chat.server.stringbased.CommandExecutionResult;
 import test.chat.server.stringbased.CommandHandler;
 
 public class UserCountCommand implements CommandHandler {
-	private Chat chat;
+	private Chat<String> chat;
 
-	public UserCountCommand(Chat chat) {
+	public UserCountCommand(Chat<String> chat) {
 		this.chat = chat;
 	}
 

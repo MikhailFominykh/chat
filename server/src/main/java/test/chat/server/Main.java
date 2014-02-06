@@ -4,8 +4,8 @@ import test.chat.protocol.DefaultProtocol;
 import test.chat.protocol.Utf8StringMessageProtocol;
 import test.chat.server.stringbased.ActiveClientMessageProcessor;
 import test.chat.server.stringbased.AnonymousClientMessageProcessor;
-import test.chat.server.stringbased.Chat;
 import test.chat.server.stringbased.ChatCommands;
+import test.chat.server.stringbased.StringBasedChat;
 import test.chat.server.stringbased.commands.ChangeNameCommand;
 import test.chat.server.stringbased.commands.KickUserCommand;
 import test.chat.server.stringbased.commands.UserCountCommand;
@@ -26,7 +26,7 @@ public class Main {
 	public static void main(String[] args) throws IOException, StartedServerException {
 		Utf8StringMessageProtocol protocol = new Utf8StringMessageProtocol(new DefaultProtocol());
 
-		Chat chat = new Chat();
+		Chat<String> chat = new StringBasedChat();
 		ChatCommands chatCommands = createChatCommands(chat);
 
 		chat.setMessageHistory(new LimitedMessageHistory<String>(100));

@@ -1,7 +1,7 @@
 package test.chat.server.stringbased.commands;
 
 import test.chat.server.Client;
-import test.chat.server.stringbased.Chat;
+import test.chat.server.Chat;
 import test.chat.server.stringbased.CommandExecutionResult;
 import test.chat.server.stringbased.CommandHandler;
 
@@ -10,9 +10,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class UserListCommand implements CommandHandler {
-	private Chat chat;
+	private Chat<String> chat;
 
-	public UserListCommand(Chat chat) {
+	public UserListCommand(Chat<String> chat) {
 		this.chat = chat;
 	}
 

@@ -2,6 +2,7 @@ package test.chat.server.stringbased;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import test.chat.server.Chat;
 import test.chat.server.Client;
 import test.chat.server.MessageProcessor;
 
@@ -10,16 +11,16 @@ public class ActiveClientMessageProcessor extends MessageProcessor<String> {
 	private static final String COMMAND_PREFIX = "/";
 
 	private CommandHandler commandHandler;
-	private Chat chat;
+	private Chat<String> chat;
 
-	public ActiveClientMessageProcessor(CommandHandler commandHandler, Chat chat) {
+	public ActiveClientMessageProcessor(CommandHandler commandHandler, Chat<String> chat) {
 		this.commandHandler = commandHandler;
 		this.chat = chat;
 	}
 
 	@Override
 	public void processMessage(Client<String> client, String message) {
-		logger.trace("{}: >>{}<<", client.getName(), message);
+		logger.trace("{}: {}", client.getName(), message);
 		if (isCommand(message)) {
 			executeCommand(client, message);
 		} else {
